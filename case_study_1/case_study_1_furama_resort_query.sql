@@ -221,8 +221,20 @@ from (select DVDK.ma_dich_vu_di_kem from dich_vu_di_kem DVDK
 
 -- Câu 20: Hiển thị thông tin của tất cả các nhân viên và khách hàng có trong hệ thống, thông tin hiển thị bao gồm id 
 -- (ma_nhan_vien, ma_khach_hang), ho_ten, email, so_dien_thoai, ngay_sinh, dia_chi.
-select ma_nhan_vien, ho_ten, email, so_dien_thoai, ngay_sinh, dia_chi
+select ma_nhan_vien as id, ho_ten, email, so_dien_thoai, ngay_sinh, dia_chi
 from nhan_vien
 union
-select ma_khach_hang, ho_ten, email, so_dien_thoai, ngay_sinh, dia_chi
+select ma_khach_hang as id, ho_ten, email, so_dien_thoai, ngay_sinh, dia_chi
 from khach_hang;
+
+-- Câu 21: Tạo khung nhìn có tên là v_nhan_vien để lấy được thông tin của tất cả các nhân viên có địa chỉ là 
+-- “Hải Châu” và đã từng lập hợp đồng cho một hoặc nhiều khách hàng bất kì với ngày lập hợp đồng là “12/12/2019”.
+create view vv_nhan_vien as
+select NV.*
+from nhan_vien NV
+join hop_dong HD on NV.ma_nhan_vien = HD.ma_nhan_vien
+where NV.dia_chi like '%Hải Châu' and ngay_lam_hop_dong = '2019-12-12'
+group by ma_nhan_vien;
+
+select * from vv_nhan_vien;
+drop view vv_nhan_vien;
