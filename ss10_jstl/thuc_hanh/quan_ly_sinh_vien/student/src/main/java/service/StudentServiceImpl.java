@@ -6,22 +6,22 @@ import repository.StudentRepositoryImpl;
 
 import java.util.List;
 
-public class StudentServiceImpl implements StudentService{
+public class StudentServiceImpl implements StudentService {
     private StudentRepository studentRepository = new StudentRepositoryImpl();
 
     @Override
     public void create(Student student) {
-    studentRepository.create(student);
+        studentRepository.create(student);
     }
 
     @Override
     public void delete(String id) {
-
+        studentRepository.delete(id);
     }
 
     @Override
     public void update(Student student) {
-
+        studentRepository.update(student);
     }
 
     @Override
