@@ -116,14 +116,6 @@ public class ProductServlet extends HttpServlet {
     }
 
     private void doCreate(HttpServletRequest request, HttpServletResponse response) throws IOException {
-//        String id = request.getParameter("msv");
-//        String name = request.getParameter("tsv");
-//        int sex = Integer.parseInt(request.getParameter("gt"));
-//        String address = request.getParameter("dc");
-//        float mark = Float.parseFloat(request.getParameter("d"));
-//        Student student = new Student(id, name, sex, address, mark);
-//        service.create(student);
-//        response.sendRedirect("/student?action=list");
         String id = request.getParameter("id");
         String name = request.getParameter("name");
         float price = Float.parseFloat(request.getParameter("price"));
@@ -135,19 +127,6 @@ public class ProductServlet extends HttpServlet {
     }
 
     private void deleteProduct(HttpServletRequest request, HttpServletResponse response) {
-//        String id = request.getParameter("id");
-//        Student student = service.findById(id);
-//        RequestDispatcher dispatcher;
-//        if (student == null) {
-//            dispatcher = request.getRequestDispatcher("error-404.jsp");
-//        } else {
-//            service.delete(id);
-//            try {
-//                response.sendRedirect("/student");
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
         String id = request.getParameter("id");
         Product product = service.findById(id);
         RequestDispatcher dispatcher;
