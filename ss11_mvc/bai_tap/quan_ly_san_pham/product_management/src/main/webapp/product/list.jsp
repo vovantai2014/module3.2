@@ -23,6 +23,13 @@
 </head>
 <body>
 <h2 align="center"> DANH SÁCH SẢN PHẨM</h2>
+<hr>
+<form action="/product" method="get">
+    <input type="text" name="action" value="search" hidden>
+    <input type="text" name="name" placeholder="nhập tên sp cần tìm">
+    <button type="submit">Tìm kiếm</button>
+</form>
+<hr>
 <table class="table table-striped table-hover">
     <thead>
     <tr>
@@ -36,17 +43,6 @@
     </tr>
     </thead>
     <thead>
-<%--    <c:forEach items="products" var="product" varStatus="status">--%>
-<%--        <tr>--%>
-<%--            <td>${status.count}</td>--%>
-<%--            <td>${product.id}</td>--%>
-<%--            <td>${product.name}</td>--%>
-<%--            <td>${product.price}</td>--%>
-<%--            <td>${product.describe}</td>--%>
-<%--            <td>${product.producer}</td>--%>
-<%--        </tr>--%>
-
-<%--    </c:forEach>--%>
     <c:forEach items="${p}" var="pro" varStatus="status">
         <tr>
             <td>${status.count}</td>

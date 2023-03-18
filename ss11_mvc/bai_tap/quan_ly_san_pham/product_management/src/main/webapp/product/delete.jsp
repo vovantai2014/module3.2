@@ -11,7 +11,7 @@
     <title>Delete Product</title>
 </head>
 <body>
-<h1>Delete Product</h1>
+<h1 align="center">Delete Product</h1>
 <form method="post">
     <fieldset>
         <legend> </legend>

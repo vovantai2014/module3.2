@@ -12,7 +12,7 @@
     <title>Update Product</title>
 </head>
 <body>
-<h1>Update Product</h1>
+<h1 align="center">Update Product</h1>
 <form method="post">
     <fieldset>
         <legend> Product Information</legend>
